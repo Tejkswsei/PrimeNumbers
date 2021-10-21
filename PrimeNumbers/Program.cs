@@ -17,7 +17,7 @@ namespace PrimeNumbers
 
         static List<int> GetPrimeNumbers(int data)
         {
-            int count = 0;
+            int count = 2;
             List<int> primeNumbers = new();
 
             do
