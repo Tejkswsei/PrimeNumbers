@@ -22,7 +22,7 @@ namespace PrimeNumbers
             int number = 2;
             int count = 0;
 
-            do
+            while (count < data)
             {
                 if (IsPrime(number))
                 {
@@ -31,7 +31,6 @@ namespace PrimeNumbers
                 }
                 number++;
             }
-            while (count < data);
         }
 
         static List<int> GetPrimeNumbers2(int data)
@@ -39,13 +38,12 @@ namespace PrimeNumbers
             int count = 2;
             List<int> primeNumbers = new();
 
-            do
+            while (primeNumbers.Count < data)
             {
                 if (IsPrime(count)) primeNumbers.Add(count);
 
                 count++;
             }
-            while (primeNumbers.Count < data);
 
             return primeNumbers;
         }
