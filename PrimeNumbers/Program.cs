@@ -12,6 +12,7 @@ namespace PrimeNumbers
                 int data = Convert.ToInt32(Console.ReadLine());
 
                 GetPrimeNumbers1(data);
+                Console.WriteLine();
                 WriteNumbers(GetPrimeNumbers2(data));
             }
         }
