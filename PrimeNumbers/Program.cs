@@ -11,24 +11,51 @@ namespace PrimeNumbers
             {
                 int data = Convert.ToInt32(Console.ReadLine());
 
-                WriteNumbers(GetPrimeNumbers(data));
+                GetPrimeNumbers1(data);
+                Console.WriteLine();
+                WriteNumbers(GetPrimeNumbers2(data));
             }
         }
 
-        static List<int> GetPrimeNumbers(int data)
+        static void GetPrimeNumbers1(int data)
+        {
+            int number = 2;
+            int count = 0;
+
+            while (count < data)
+            {
+                if (IsPrime(number))
+                {
+                    Console.Write($"{number}, ");
+                    count++;
+                }
+                number++;
+            }
+        }
+
+        static List<int> GetPrimeNumbers2(int data)
         {
             int count = 2;
             List<int> primeNumbers = new();
 
-            do
+            while (primeNumbers.Count < data)
             {
                 if (IsPrime(count)) primeNumbers.Add(count);
 
                 count++;
             }
-            while (primeNumbers.Count < data);
 
             return primeNumbers;
+        }
+
+        static void WriteNumbers(List<int> primeNumbers)
+        {
+            foreach (int number in primeNumbers)
+            {
+                Console.Write($"{number}, ");
+            }
+
+            Console.WriteLine("");
         }
 
         static bool IsPrime(int num)
@@ -42,16 +69,6 @@ namespace PrimeNumbers
             }
 
             return true;
-        }
-
-        static void WriteNumbers(List<int> primeNumbers)
-        {
-            foreach (int number in primeNumbers)
-            {
-                Console.Write($"{number}, ");
-            }
-
-            Console.WriteLine("");
         }
     }
 }
